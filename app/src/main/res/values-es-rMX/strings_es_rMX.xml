@@ -3,5 +3,17 @@
     <!-- TODO: Remove or change this placeholder text -->
 
     <string name="title">Administrador de Contraseñas</string>
-    <string name="add_website">Agregar nuevo sitio web</string>
+    <string name="add_website">Agregar nueva nota</string>
+
+    <string name="error_label">¡Un error ha ocurrido!</string>
+    <string name="error_description_if_empty">Los datos no pueden estar vacíos.</string>
+
+    <string name="login">Inicio de sesión</string>
+    <string name="user">Usuario...</string>
+    <string name="password">Contraseña...</string>
+    <string name="email">Correo...</string>
+    <string name="name">Nombre...</string>
+    <string name="btn_enter">Entrar</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="btn_add">Agregar</string>
 </resources>

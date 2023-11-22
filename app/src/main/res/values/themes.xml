@@ -3,6 +3,7 @@
     <style name="Base.Theme.AdministradorDeContraseñas" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/almost_dark_blue</item>
+        <item name="android:navigationBarColor">@color/almost_dark_blue</item>
     </style>
 
     <style name="Theme.AdministradorDeContraseñas" parent="Base.Theme.AdministradorDeContraseñas" />
@@ -16,9 +17,20 @@
     <style name="buttons" parent="Theme.AdministradorDeContraseñas">
 
         <item name="android:textColor">@color/white</item>
-        <item name="backgroundTint">@color/light_blue</item>
+        <item name="backgroundTint">@color/very_light_blue</item>
         <item name="android:textSize">16sp</item>
 
+    </style>
+
+    <style name="buttons_two" parent="Theme.AdministradorDeContraseñas">
+
+        <item name="android:textColor">@color/very_light_blue</item>
+        <item name="backgroundTint">@color/cyan</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="elevation">5dp</item>
+        <item name="android:shadowColor">@color/very_dark_blue</item>
+        <item name="android:shadowRadius">5</item>
     </style>
 
 </resources>

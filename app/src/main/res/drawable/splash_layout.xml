@@ -3,12 +3,13 @@
 
     <item android:drawable="@color/almost_dark_blue" />
 
-    <item>
-
-        <bitmap android:src="@mipmap/icono"
-            android:gravity="center"
-            />
-
+    <item
+        android:width="200dp"
+        android:height="200dp"
+        android:gravity="center">
+        <bitmap
+            android:src="@mipmap/icono_foreground" />
     </item>
 
 </layer-list>
+
