@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Administrador de Contraseñas</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="title">Administrador de Contraseñas</string>
     <string name="add_website">Agregar nueva nota</string>
@@ -15,5 +16,21 @@
     <string name="name">Nombre...</string>
     <string name="btn_enter">Entrar</string>
     <string name="btn_cancel">Cancelar</string>
+    <string name="btn_gen">Generar</string>
     <string name="btn_add">Agregar</string>
+    <string name="btn_galery">Abrir Galería</string>
+
+    <string name="selectIcon">Icono (opcional)</string>
+    <string name="url">URL del Sitio Web...</string>
+    <string name="optional">⬇ Opcional si quieres agregar una aplicación en vez de un sitio web.</string>
+
+    <string name="psw_gen">Generador de Contraseñas</string>
+    <string name="psw_new">Nueva contraseña...</string>
+
+    <string name="length">Largo</string>
+    <string name="a_z">Contiene letras de la a-z</string>
+    <string name="A_Z">Contiene letras de la A-Z</string>
+    <string name="zero_nine">Contiene números del 0-9</string>
+    <string name="special_characters">Contiene carácteres especiales</string>
+    <string name="exclude">Excluir carácteres iguales</string>
 </resources>

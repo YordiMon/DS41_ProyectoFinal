@@ -15,8 +15,22 @@
     <string name="name">Name...</string>
     <string name="btn_enter">Enter</string>
     <string name="btn_cancel">Cancel</string>
+    <string name="btn_gen">Generate</string>
     <string name="btn_add">Add</string>
+    <string name="btn_galery">Open Galery</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="selectIcon">Icon (optional)</string>
+    <string name="url">Website URL...</string>
+
+    <string name="optional">⬇ Optional if you want to add an app instead of a website.</string>
+    <string name="psw_gen">Password Generator</string>
+    <string name="psw_new">New password...</string>
+    <string name="length">Length</string>
+    <string name="a_z">Contains letters from a-z</string>
+    <string name="A_Z">Contains letters from A-Z</string>
+    <string name="zero_nine">Contains numbers from 0-9</string>
+    <string name="special_characters">Contains special characters</string>
+    <string name="exclude">Exclude similar characters</string>
 </resources>

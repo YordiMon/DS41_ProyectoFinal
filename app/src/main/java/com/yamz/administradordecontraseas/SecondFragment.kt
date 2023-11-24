@@ -42,12 +42,11 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Asigna el listener al botón de retroceso
         view.isFocusableInTouchMode = true
         view.requestFocus()
         view.setOnKeyListener { _, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_BACK && event.action == KeyEvent.ACTION_UP) {
-                // Cierra la aplicación completamente cuando se detecta el botón de retroceso en el fragmento
+
                 requireActivity().finishAffinity()
                 return@setOnKeyListener true
             }

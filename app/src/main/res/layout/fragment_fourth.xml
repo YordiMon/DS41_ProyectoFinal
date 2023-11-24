@@ -1,14 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FourthFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/almost_dark_blue"
+    tools:context=".FirstFragment"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/semi_dark_blue"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
     <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:textColor="@color/white"
+        android:elevation="10dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/toolbar"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toTopOf="@id/toolbar"
+        android:layout_marginTop="26dp"
+        android:textSize="18sp"
+        />
+
+    <View
+        android:id="@+id/panel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@drawable/rounded_corners"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="80dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:shadowColor="@color/black"
+        android:shadowRadius="5"
+        android:backgroundTint="@color/semi_dark_blue"
+        />
 
-</FrameLayout>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_two"
+        android:elevation="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/rounded_top_corners"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintStart_toStartOf="@id/panel"
+        app:layout_constraintEnd_toEndOf="@id/panel"
+        app:layout_constraintTop_toTopOf="@id/panel"
+        android:layout_marginHorizontal="16dp"
+        android:backgroundTint="@color/dark_blue"
+        />
+
+    <TextView
+        android:id="@+id/psw_gen"
+        android:elevation="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/toolbar_two"
+        app:layout_constraintEnd_toEndOf="@id/toolbar_two"
+        app:layout_constraintTop_toTopOf="@id/toolbar_two"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar_two"
+        android:text="@string/psw_gen"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="@id/panel"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_two"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@id/panel"
+        android:hint="@string/psw_new"
+        android:textColorHint="@color/very_light_blue"
+        android:layout_marginHorizontal="32dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        />
+
+    <LinearLayout
+        android:id="@+id/two_buttons"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintTop_toBottomOf="@id/password"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="10dp"
+        >
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_cancel"
+            style="@style/buttons_two" />
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="1dp"/>
+
+        <Button
+            android:id="@+id/gen_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_gen"
+            style="@style/buttons_two"/>
+    </LinearLayout>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/a_z"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/a_z"
+        android:elevation="10dp"
+        app:layout_constraintTop_toBottomOf="@id/length"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="32dp"
+        app:trackTint="@color/dark_blue"
+        app:thumbTint="@color/almost_dark_blue"
+        android:textSize="16sp"
+        android:textColor="@color/very_light_blue"
+        android:textStyle="bold"
+        />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/A_Z"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/A_Z"
+        android:elevation="10dp"
+        app:layout_constraintTop_toBottomOf="@id/a_z"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        app:trackTint="@color/dark_blue"
+        app:thumbTint="@color/almost_dark_blue"
+        android:textSize="16sp"
+        android:textColor="@color/very_light_blue"
+        android:textStyle="bold"
+        />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/zero_nine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/zero_nine"
+        android:elevation="10dp"
+        app:layout_constraintTop_toBottomOf="@id/A_Z"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        app:trackTint="@color/dark_blue"
+        app:thumbTint="@color/almost_dark_blue"
+        android:textSize="16sp"
+        android:textColor="@color/very_light_blue"
+        android:textStyle="bold"
+        />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/special_char"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/special_characters"
+        android:elevation="10dp"
+        app:layout_constraintTop_toBottomOf="@id/zero_nine"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        app:trackTint="@color/dark_blue"
+        app:thumbTint="@color/almost_dark_blue"
+        android:textSize="16sp"
+        android:textColor="@color/very_light_blue"
+        android:textStyle="bold"
+        />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/exclude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/exclude"
+        android:elevation="10dp"
+        app:layout_constraintTop_toBottomOf="@id/special_char"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        app:trackTint="@color/dark_blue"
+        app:thumbTint="@color/almost_dark_blue"
+        android:textSize="16sp"
+        android:textColor="@color/very_light_blue"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/length"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:elevation="10dp"
+        android:textColor="@color/very_light_blue"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/panel"
+        app:layout_constraintTop_toBottomOf="@id/two_buttons"
+        android:layout_marginTop="32dp"
+        android:text="@string/length"
+        android:layout_marginStart="16dp"
+        />
+
+    <EditText
+        android:id="@+id/et_lenght"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:hint="10"
+        android:textColorHint="@color/light_blue"
+        app:layout_constraintEnd_toEndOf="@id/panel"
+        app:layout_constraintTop_toTopOf="@id/length"
+        android:textAlignment="center"
+        android:textColor="@color/very_light_blue"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="16dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
