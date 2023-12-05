@@ -1,56 +1,88 @@
 package com.yamz.administradordecontraseas
 
+import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.view.KeyEvent
+import android.provider.MediaStore
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class SecondFragment : Fragment() {
 
+    private val REQUEST_PICK_IMAGE = 1
+    private var selectedImageUri: Uri? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val myView = inflater.inflate(R.layout.fragment_second, container, false)
+        val myView = inflater.inflate(R.layout.fragment_third, container, false)
 
-        val add = myView.findViewById<Button>(R.id.add_website)
-        val gen = myView.findViewById<Button>(R.id.gen_password)
+        val cancel = myView.findViewById<Button>(R.id.cancel)
 
-        add.setOnClickListener() {
+        cancel.setOnClickListener() {
 
-            val controller: NavController = Navigation.findNavController(myView)
-            controller.navigate(R.id.action_secondFragment_to_thirdFragment)
+                val controller: NavController = Navigation.findNavController(myView)
+                controller.navigate(R.id.action_thirdFragment_to_secondFragment)
+            }
+
+        val selectImageBtn = myView.findViewById<ImageView>(R.id.icono)
+
+        selectImageBtn.setOnClickListener {
+            
+            openGallery()
         }
 
-        gen.setOnClickListener() {
+        val add = myView.findViewById<Button>(R.id.add)
+        val name = myView.findViewById<EditText>(R.id.name)
+        val user = myView.findViewById<EditText>(R.id.user)
+        val email = myView.findViewById<EditText>(R.id.email)
+        val password = myView.findViewById<EditText>(R.id.password)
 
-            val controller: NavController = Navigation.findNavController(myView)
-            controller.navigate(R.id.action_secondFragment_to_fourthFragment)
+        add.setOnClickListener() {
+            if (user.text.isNotEmpty() and password.text.isNotEmpty()
+                and name.text.isNotEmpty() and email.text.isNotEmpty()) {
+
+                val controller: NavController = Navigation.findNavController(myView)
+                controller.navigate(R.id.action_thirdFragment_to_secondFragment)
+
+            } else {
+
+                val error = BottomSheetDialog(myView.context)
+                val layout: View = layoutInflater.inflate(R.layout.error_template, null)
+
+                error.setContentView(layout)
+                error.show()
+            }
+
         }
 
         return myView
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        private fun openGallery() {
+            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            startActivityForResult(intent, REQUEST_PICK_IMAGE)
+        }
 
-        view.isFocusableInTouchMode = true
-        view.requestFocus()
-        view.setOnKeyListener { _, keyCode, event ->
-            if (keyCode == KeyEvent.KEYCODE_BACK && event.action == KeyEvent.ACTION_UP) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
 
-                requireActivity().finishAffinity()
-                return@setOnKeyListener true
-            }
-            false
+        if (requestCode == REQUEST_PICK_IMAGE && resultCode == Activity.RESULT_OK && data != null) {
+            selectedImageUri = data.data
+
+            val imageView = view?.findViewById<ImageView>(R.id.icono)
+            imageView?.setImageURI(selectedImageUri)
         }
     }
 }

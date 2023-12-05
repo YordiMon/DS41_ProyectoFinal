@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/almost_dark_blue"
-    tools:context=".FirstFragment"
+    tools:context=".LoginFragment"
     >
 
     <androidx.appcompat.widget.Toolbar

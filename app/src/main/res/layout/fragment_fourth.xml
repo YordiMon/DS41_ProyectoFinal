@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/almost_dark_blue"
-    tools:context=".FirstFragment"
+    tools:context=".LoginFragment"
     >
 
     <androidx.appcompat.widget.Toolbar
@@ -228,9 +228,9 @@
 
     <EditText
         android:id="@+id/et_lenght"
-        android:layout_width="48dp"
+        android:layout_width="80dp"
         android:layout_height="48dp"
-        android:hint="10"
+        android:hint="8-20"
         android:textColorHint="@color/light_blue"
         app:layout_constraintEnd_toEndOf="@id/panel"
         app:layout_constraintTop_toTopOf="@id/length"

@@ -1,17 +1,14 @@
 package com.yamz.administradordecontraseas
 
-import android.graphics.Typeface
 import android.os.Bundle
-import android.text.InputType
+import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class FirstFragment : Fragment() {
 
@@ -20,37 +17,38 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val myView = inflater.inflate(R.layout.fragment_first, container, false)
+        val myView = inflater.inflate(R.layout.fragment_second, container, false)
 
-        val enter = myView.findViewById<Button>(R.id.enter)
-        val cancel = myView.findViewById<Button>(R.id.cancel)
-        val user = myView.findViewById<EditText>(R.id.user)
-        val password = myView.findViewById<EditText>(R.id.password)
-        password.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-        password.setTypeface(Typeface.DEFAULT)
+        val add = myView.findViewById<Button>(R.id.add_website)
+        val gen = myView.findViewById<Button>(R.id.gen_password)
 
-        enter.setOnClickListener() {
+        add.setOnClickListener() {
 
-            if (user.text.isNotEmpty() and password.text.isNotEmpty()) {
-
-                val controller: NavController = Navigation.findNavController(myView)
-                controller.navigate(R.id.action_firstFragment_to_secondFragment)
-
-
-            } else {
-
-                val error = BottomSheetDialog(myView.context)
-                val layout: View = layoutInflater.inflate(R.layout.error_template, null)
-
-                error.setContentView(layout)
-                error.show()
-            }
+            val controller: NavController = Navigation.findNavController(myView)
+            controller.navigate(R.id.action_secondFragment_to_thirdFragment)
         }
 
-        cancel.setOnClickListener() {
-            requireActivity().finish()
+        gen.setOnClickListener() {
+
+            val controller: NavController = Navigation.findNavController(myView)
+            controller.navigate(R.id.action_secondFragment_to_fourthFragment)
         }
 
         return myView
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        view.isFocusableInTouchMode = true
+        view.requestFocus()
+        view.setOnKeyListener { _, keyCode, event ->
+            if (keyCode == KeyEvent.KEYCODE_BACK && event.action == KeyEvent.ACTION_UP) {
+
+                requireActivity().finishAffinity()
+                return@setOnKeyListener true
+            }
+            false
+        }
     }
 }
