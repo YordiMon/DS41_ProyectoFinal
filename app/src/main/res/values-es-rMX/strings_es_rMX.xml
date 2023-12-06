@@ -13,6 +13,8 @@
     <string name="user">Usuario...</string>
     <string name="password">Contraseña...</string>
     <string name="email">Correo...</string>
+    <string name="email...">Correo</string>
+    <string name="name...">Usuario</string>
     <string name="name">Nombre...</string>
     <string name="btn_enter">Entrar</string>
     <string name="btn_cancel">Cancelar</string>
@@ -20,7 +22,7 @@
     <string name="btn_add">Agregar</string>
     <string name="btn_galery">Abrir Galería</string>
 
-    <string name="selectIcon">Icono (opcional)</string>
+    <string name="selectIcon">Icono</string>
     <string name="url">URL del Sitio Web...</string>
     <string name="optional">⬇ Opcional si quieres agregar una aplicación en vez de un sitio web.</string>
 

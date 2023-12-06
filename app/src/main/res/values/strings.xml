@@ -13,6 +13,8 @@
     <string name="password">Password...</string>
     <string name="email">Email...</string>
     <string name="name">Name...</string>
+    <string name="email...">Email</string>
+    <string name="name...">User</string>
     <string name="btn_enter">Enter</string>
     <string name="btn_cancel">Cancel</string>
     <string name="btn_gen">Generate</string>
@@ -21,7 +23,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="selectIcon">Icon (optional)</string>
+    <string name="selectIcon">Icon</string>
     <string name="url">Website URL...</string>
 
     <string name="optional">⬇ Optional if you want to add an app instead of a website.</string>

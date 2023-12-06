@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_secondFragment_to_fourthFragment"
             app:destination="@id/fourthFragment" />
+        <action
+            android:id="@+id/action_secondFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/thirdFragment"
@@ -39,6 +42,15 @@
         tools:layout="@layout/fragment_fourth" >
         <action
             android:id="@+id/action_fourthFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.yamz.administradordecontraseas.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_secondFragment"
             app:destination="@id/secondFragment" />
     </fragment>
 </navigation>
